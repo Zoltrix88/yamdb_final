@@ -12,7 +12,6 @@ services:
 
   web:
     build: ../api_yamdb
-    image: zoltrix88/yamdb_final:latest
     restart: always
     volumes:
       - static_value:/app/static/
