@@ -47,7 +47,7 @@ jobs:
           with:
             context: api_yamdb/
             push: true
-            tags: ${{ secrets.DOCKER_USERNAME }}/infra:latest
+            tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
 
   deploy:
     if: github.ref == 'refs/heads/master'
@@ -63,7 +63,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
-            sudo docker pull zoltrix88/infra:latest
+            sudo docker pull zoltrix88/yamdb_final:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
