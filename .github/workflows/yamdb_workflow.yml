@@ -61,7 +61,6 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          stack_file_name: docker-compose.yaml
           script: |
             sudo docker pull zoltrix88/yamdb_final:latest
             sudo docker-compose stop
