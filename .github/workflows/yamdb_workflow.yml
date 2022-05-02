@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.7
 
     - name: Install dependencies
       run: | 
@@ -47,7 +47,7 @@ jobs:
           with:
             context: api_yamdb/
             push: true
-            tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
+            tags: ${{ secrets.DOCKER_USERNAME }}/infra:latest
 
   deploy:
     if: github.ref == 'refs/heads/master'
@@ -61,8 +61,9 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
+          stack_file_name: docker-compose.yaml
           script: |
-            sudo docker pull zoltrix88/yamdb_final:latest
+            sudo docker pull zoltrix88/infra:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
