@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: 3.8
 
     - name: Install dependencies
       run: | 
@@ -62,7 +62,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            sudo docker pull zoltrix88/yamdb_final:latest
+            sudo docker pull zoltrix88/infra:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
