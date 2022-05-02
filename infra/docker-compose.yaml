@@ -11,6 +11,7 @@ services:
       - ./.env
 
   web:
+    image: zoltrix88/yamdb_final:latest
     build: ../api_yamdb
     restart: always
     volumes:
