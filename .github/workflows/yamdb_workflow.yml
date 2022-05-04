@@ -62,7 +62,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
           # Выполняет pull образа с DockerHub
-          sudo docker pull zoltrix88/yamdb_final
+          sudo docker pull zoltrix88/yamdb_final:latest
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 zoltrix88/yamdb_final
