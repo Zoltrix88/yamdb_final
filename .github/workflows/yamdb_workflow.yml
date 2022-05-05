@@ -61,6 +61,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            sudo docker pull zoltrix88/yamdb_final:v20.10.12
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
