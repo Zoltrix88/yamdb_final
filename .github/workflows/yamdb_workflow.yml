@@ -3,7 +3,7 @@ name: yamdb_workflow
 on: 
   push:
     branches:
-      - main
+      - master
     paths-ignore:
       - '**/README.md'
 
@@ -82,4 +82,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: ${{ github.workflow }} успешно выполнен!
+          message: ${{ github.workflow }} успешно выполнен!!
