@@ -6,7 +6,7 @@ services:
   db:
     image: postgres:13.0-alpine
     environment:
-            POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+        POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
     volumes:
       - /var/lib/postgresql/data/
     env_file:
