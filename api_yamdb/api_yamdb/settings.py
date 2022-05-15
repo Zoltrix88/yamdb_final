@@ -11,7 +11,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='p&l%385148kslhtyn^##a1)ilz@4z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') == 'true'
 
-ALLOWED_HOSTS = ['*', 'web:8000']
+ALLOWED_HOSTS = ['*', 'http://web:8000']
 
 
 # Application definition
